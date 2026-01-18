@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,237 @@
     <title>HW3</title>
 </head>
 <body>
-    <div id="app">
-        
-    </div>
+<main class="page">
+    <h1 class="title">Квиз</h1>
+
+    <form class="test" action="#" method="get">
+        <section class="question">
+            <h2>Вопрос 1 (10 рублей)</h2>
+            <p>Как расшифровывается HTML?</p>
+
+            <div class="answers">
+                <div class="option">
+                    <input type="radio" name="q1" id="q1-a" data-correct/>
+                    <label for="q1-a"><span class="text">Hyper Text Markup Language</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q1" id="q1-b"/>
+                    <label for="q1-b"><span class="text">Hyper Trololo Markup Link</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q1" id="q1-c"/>
+                    <label for="q1-c"><span class="text">High Text Machine Language</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q1" id="q1-d"/>
+                    <label for="q1-d"><span class="text">Hyper Text MamaMia Language</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Вопрос 2 (20 рублей)</h2>
+            <p>В каком году появилось первое описание HTML?</p>
+
+            <div class="answers">
+                <div class="option">
+                    <input type="radio" name="q2" id="q2-a"/>
+                    <label for="q2-a"><span class="text">988</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q2" id="q2-b" data-correct/>
+                    <label for="q2-b"><span class="text">1991</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q2" id="q2-c"/>
+                    <label for="q2-c"><span class="text">1996</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q2" id="q2-d"/>
+                    <label for="q2-d"><span class="text">2001</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Вопрос 3 (50 рублей)</h2>
+            <p>Какой атрибут необходимо использовать, чтобы указать уникальный идентификатор элемента?</p>
+
+            <div class="answers">
+                <div class="option">
+                    <input type="radio" name="q3" id="q3-a" data-correct/>
+                    <label for="q3-a"><span class="text">id</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q3" id="q3-b"/>
+                    <label for="q3-b"><span class="text">class</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q3" id="q3-c"/>
+                    <label for="q3-c"><span class="text">name</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q3" id="q3-d"/>
+                    <label for="q3-d"><span class="text">title</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Вопрос 4 (100 рублей)</h2>
+            <p>Зачем нужен !DOCTYPE html ?</p>
+
+            <div class="answers">
+                <div class="option">
+                    <input type="radio" name="q4" id="q4-a"/>
+                    <label for="q4-a"><span class="text">Подключает css файл к странице</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q4" id="q4-b"/>
+                    <label for="q4-b"><span class="text">Делает то, не знаю что, так, не знаю как</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">В целом да, но нет</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q4" id="q4-c" data-correct/>
+                    <label for="q4-c"><span class="text">Указывает тип документа</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q4" id="q4-d"/>
+                    <label for="q4-d"><span class="text">Покупает самую перспективную акцию на рынке ценных бумаг</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Это, конечно, неверно. Но так хотелось бы</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Вопрос 5</h2>
+            <p>Какой атрибут в теге "a" задаёт адрес ссылки?</p>
+
+            <div class="answers">
+                <div class="option">
+                    <input type="radio" name="q5" id="q5-a"/>
+                    <label for="q5-a"><span class="text">src</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q5" id="q5-b"/>
+                    <label for="q5-b"><span class="text">alt</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q5" id="q5-c"/>
+                    <label for="q5-c"><span class="text">action</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="q5" id="q5-d" data-correct/>
+                    <label for="q5-d"><span class="text">href</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="question">
+            <h2>Вопрос (Extra)</h2>
+            <p>Что помогает поддерживать CSS без дублирования?</p>
+
+            <div class="answers">
+                <div class="option">
+                    <input type="checkbox" id="q6-a" name="q6-a" data-correct/>
+                    <label for="q6-a"><span class="text">Вынос общих стилей</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="checkbox" id="q6-b" name="q6-b"/>
+                    <label for="q6-b"><span class="text">Копирование одного и того же набора свойств в каждый селектор "на всякий случай"</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="checkbox" id="q6-c" name="q6-c"/>
+                    <label for="q6-c"><span class="text">!important почти везде, чтобы "точно работало"</span></label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                </div>
+
+                <div class="option">
+                    <input type="checkbox" id="q6-d" name="q6-d" data-correct/>
+                    <label for="q6-d">
+                        <span class="text">Не то, как ты бьёшь, а то, как держишь удар</span>
+                    </label>
+                    <span class="msg ok">Верно</span>
+                    <span class="msg bad">Неверно</span>
+                    <img class="pic" src="./images/rocky.jpg" alt="Rocky"/>
+                </div>
+            </div>
+        </section>
+
+        <section class="question">
+            <details class="key">
+                <summary>Показать ответы</summary>
+                <ol class="key-list">
+                    <li>Hyper Text Markup Language</li>
+                    <li>1991</li>
+                    <li>id</li>
+                    <li>Указывает тип документа</li>
+                    <li>href</li>
+                    <li>На такой вопрос лучше ответить самому</li>
+                </ol>
+            </details>
+        </section>
+    </form>
+</main>
 </body>
 </html>
