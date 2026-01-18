@@ -1,6 +1,163 @@
+:root {
+    --bg: #003049;
+    --text: #fdf0d5;
+    --accent: #669bbc;
+    --ok: green;
+    --bad: red;
+
+    --gap: 14px;
+    --pad: 18px;
+    --r: 14px;
+
+    --card-bg: rgba(253, 240, 213, 0.06);
+    --panel-bg: rgba(0, 48, 73, 0.25);
+    --border: rgba(102, 155, 188, 0.55);
+
+    --min-h: 230px;
+}
+
 body {
     margin: 0;
-    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
 
-    background: #292929;
+.page {
+    width: 860px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 2.5rem;
+}
+
+.title {
+    margin: 0 0 var(--gap);
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.test {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.question {
+    min-height: var(--min-h);
+    padding: var(--pad);
+    border-radius: var(--r);
+    border: 2px dashed var(--border);
+    background: var(--card-bg);
+}
+
+.question > h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.question > p {
+    margin: 0 0 14px;
+    opacity: 0.85;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    display: grid;
+    grid-template-columns: 1.25rem 1fr;
+    column-gap: 0.625rem;
+    row-gap: 0.5rem;
+}
+
+.option > input {
+    margin-top: 12px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+}
+
+.option > label {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--panel-bg);
+    cursor: pointer;
+}
+
+.option > input:focus-visible + label {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+}
+
+.msg {
+    display: none;
+    grid-column: 2 / 3;
+    width: fit-content;
+    padding: 4px 10px;
+    border-radius: var(--r);
+    font-size: 13px;
+    border: 1px solid currentColor;
+}
+
+.ok {
+    color: var(--ok);
+}
+
+.bad {
+    color: var(--bad);
+}
+
+.option > input:checked + label {
+    border-color: var(--bad);
+}
+
+.option > input[data-correct]:checked + label {
+    border-color: var(--ok);
+}
+
+.option > input[data-correct]:checked ~ .msg.ok {
+    display: inline-block;
+}
+
+.option > input:not([data-correct]):checked ~ .msg.bad {
+    display: inline-block;
+}
+
+.pic {
+    display: none;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(400px, 100%);
+    aspect-ratio: 16 / 9;
+    margin-top: 10px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+}
+
+#q6-d:checked ~ .pic {
+    display: block;
+}
+
+.key {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 12px;
+    background: var(--panel-bg);
+}
+
+.key > summary {
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.key-list {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    opacity: 0.85;
 }
