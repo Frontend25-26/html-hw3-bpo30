@@ -5,15 +5,25 @@
     --ok: green;
     --bad: red;
 
-    --gap: 14px;
-    --pad: 18px;
-    --r: 14px;
-
     --card-bg: rgba(253, 240, 213, 0.06);
     --panel-bg: rgba(0, 48, 73, 0.25);
-    --border: rgba(102, 155, 188, 0.55);
+    --border-color: rgba(102, 155, 188, 0.55);
+
+    --space: 1rem;
 
     --min-h: 230px;
+    --container-width: 860px;
+
+    --radius: 0.75rem;
+    --border: 2px;
+
+    --title-size: 1.75rem;
+    --q-title-size: 1.25rem;
+    --msg-size: 1rem;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -24,84 +34,86 @@ body {
 }
 
 .page {
-    width: 860px;
+    max-width: var(--container-width);
     margin: 0 auto;
-    padding: 1.5rem 1rem 2.5rem;
+    padding: var(--space);
 }
 
 .title {
-    margin: 0 0 var(--gap);
+    margin: 0 0 var(--space);
     text-align: center;
-    font-size: 28px;
+    font-size: var(--title-size);
     font-weight: 800;
 }
 
 .test {
     display: flex;
     flex-direction: column;
-    gap: var(--gap);
+    gap: var(--space);
 }
 
 .question {
     min-height: var(--min-h);
-    padding: var(--pad);
-    border-radius: var(--r);
-    border: 2px dashed var(--border);
+    padding: var(--space);
+    border-radius: var(--radius);
+    border: var(--border) dashed var(--border-color);
     background: var(--card-bg);
+    display: flow-root;
 }
 
 .question > h2 {
-    margin: 0 0 8px;
-    font-size: 18px;
+    margin: 0 0 var(--space);
+    font-size: var(--q-title-size);
 }
 
 .question > p {
-    margin: 0 0 14px;
+    margin: 0 0 var(--space);
     opacity: 0.85;
 }
 
 .answers {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: var(--space);
 }
 
 .option {
     display: grid;
-    grid-template-columns: 1.25rem 1fr;
-    column-gap: 0.625rem;
-    row-gap: 0.5rem;
+    grid-template-columns: 1.125rem 1fr;
+    column-gap: var(--space);
+    row-gap: var(--space);
+    align-items: center;
 }
 
 .option > input {
-    margin-top: 12px;
-    width: 18px;
-    height: 18px;
+    margin: 0;
+    width: 1.125rem;
+    height: 1.125rem;
     accent-color: var(--accent);
 }
 
 .option > label {
     display: block;
-    padding: 10px 12px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
+    padding: var(--space);
+    border-radius: var(--radius);
+    border: var(--border) solid var(--border-color);
     background: var(--panel-bg);
     cursor: pointer;
 }
 
 .option > input:focus-visible + label {
-    outline: 2px solid var(--text);
-    outline-offset: 2px;
+    outline: var(--border) solid var(--text);
+    outline-offset: var(--border);
 }
 
 .msg {
     display: none;
-    grid-column: 2 / 3;
+    grid-column: 2;
     width: fit-content;
-    padding: 4px 10px;
-    border-radius: var(--r);
-    font-size: 13px;
-    border: 1px solid currentColor;
+    padding: var(--space);
+    border-radius: var(--radius);
+    font-size: var(--msg-size);
+    border: var(--border) solid currentColor;
 }
 
 .ok {
@@ -112,42 +124,22 @@ body {
     color: var(--bad);
 }
 
-.option > input:checked + label {
-    border-color: var(--bad);
-}
-
-.option > input[data-correct]:checked + label {
-    border-color: var(--ok);
-}
-
-.option > input[data-correct]:checked ~ .msg.ok {
-    display: inline-block;
-}
-
-.option > input:not([data-correct]):checked ~ .msg.bad {
-    display: inline-block;
-}
-
 .pic {
     display: none;
     grid-column: 1 / -1;
     justify-self: center;
     width: min(400px, 100%);
     aspect-ratio: 16 / 9;
-    margin-top: 10px;
-    border-radius: 12px;
+    margin-top: var(--space);
+    border-radius: var(--radius);
     object-fit: cover;
-    border: 1px solid var(--border);
-}
-
-#q6-d:checked ~ .pic {
-    display: block;
+    border: var(--border) solid var(--border-color);
 }
 
 .key {
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 10px 12px;
+    border: var(--border) solid var(--border-color);
+    border-radius: var(--radius);
+    padding: var(--space);
     background: var(--panel-bg);
 }
 
@@ -157,7 +149,27 @@ body {
 }
 
 .key-list {
-    margin: 10px 0 0;
-    padding-left: 18px;
+    margin: var(--space) 0 0;
+    padding-left: var(--space);
     opacity: 0.85;
+}
+
+.option > input:checked + label {
+    border-color: var(--bad);
+}
+
+.option > input.data-correct:checked + label {
+    border-color: var(--ok);
+}
+
+.option > input.data-correct:checked ~ .msg.ok {
+    display: inline-block;
+}
+
+.option > input:not(.data-correct):checked ~ .msg.bad {
+    display: inline-block;
+}
+
+#q6-d:checked ~ .pic {
+    display: block;
 }
