@@ -1,6 +1,170 @@
+:root {
+    --backgroung-color: #003049;
+    --text-color: #fdf0d5;
+    --accent-color: #669bbc;
+    --good-answer-color: green;
+    --bad-answer-color: red;
+
+    --card-background: rgba(253, 240, 213, 0.06);
+    --panel-background: rgba(0, 48, 73, 0.25);
+    --border-color: rgba(102, 155, 188, 0.55);
+
+    --space: 1rem;
+
+    --min-height: 230px;
+    --container-width: 860px;
+
+    --radius: 0.75rem;
+    --border: 2px;
+
+    --title-size: 1.75rem;
+    --q-title-size: 1.25rem;
+    --message-size: 1rem;
+}
+
 body {
     margin: 0;
-    padding: 0;
+    background: var(--backgroung-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+}
 
-    background: #292929;
+.page {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--space);
+}
+
+.title {
+    margin: 0 0 var(--space);
+    text-align: center;
+    font-size: var(--title-size);
+    font-weight: 800;
+}
+
+.test {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+}
+
+.question {
+    min-height: var(--min-height);
+    padding: var(--space);
+    border-radius: var(--radius);
+    border: var(--border) dashed var(--border-color);
+    background: var(--card-background);
+}
+
+.question > h2 {
+    margin: 0 0 var(--space);
+    font-size: var(--q-title-size);
+}
+
+.question > p {
+    margin: 0 0 var(--space);
+    opacity: 0.85;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+}
+
+.option {
+    display: grid;
+    grid-template-columns: 1.125rem 1fr;
+    column-gap: var(--space);
+    row-gap: var(--space);
+    align-items: center;
+}
+
+.option > input {
+    margin: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    accent-color: var(--accent-color);
+}
+
+.option > label {
+    display: block;
+    padding: var(--space);
+    border-radius: var(--radius);
+    border: var(--border) solid var(--border-color);
+    background: var(--panel-background);
+    cursor: pointer;
+}
+
+.option > input:focus-visible + label {
+    outline: var(--border) solid var(--text-color);
+    outline-offset: var(--border);
+}
+
+.msg {
+    display: none;
+    grid-column: 2;
+    width: fit-content;
+    padding: var(--space);
+    border-radius: var(--radius);
+    font-size: var(--message-size);
+    border: var(--border) solid currentColor;
+}
+
+.ok {
+    color: var(--good-answer-color);
+}
+
+.bad {
+    color: var(--bad-answer-color);
+}
+
+.pic {
+    display: none;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(400px, 100%);
+    aspect-ratio: 16 / 9;
+    margin-top: var(--space);
+    border-radius: var(--radius);
+    object-fit: cover;
+    border: var(--border) solid var(--border-color);
+}
+
+.key {
+    border: var(--border) solid var(--border-color);
+    border-radius: var(--radius);
+    padding: var(--space);
+    background: var(--panel-background);
+}
+
+.key > summary {
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.key-list {
+    margin: var(--space) 0 0;
+    padding-left: var(--space);
+    opacity: 0.85;
+}
+
+.option > input:checked + label {
+    border-color: var(--bad-answer-color);
+}
+
+.option > input.data-correct:checked + label {
+    border-color: var(--good-answer-color);
+}
+
+.option > input.data-correct:checked ~ .msg.ok {
+    display: inline-block;
+}
+
+.option > input:not(.data-correct):checked ~ .msg.bad {
+    display: inline-block;
+}
+
+#q6-d:checked ~ .pic {
+    display: block;
 }
